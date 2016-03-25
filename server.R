@@ -36,10 +36,8 @@ for ( i in 1:nrow(y))
 # Define a server for the Shiny app
 shinyServer(function(input, output) {
   
-  # Filter data based on selections
+  # Filter data based on selection
   output$table <- DT::renderDataTable(DT::datatable({
-    #print(input$date_from)
-    #print(input$date_till)
     data <- subset(y, Date >  as.Date(input$date_from) & Date < as.Date(input$date_till))
     if (input$cat != "All") {
       data <- data[data$category == input$cat,]
