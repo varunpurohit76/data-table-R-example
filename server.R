@@ -42,9 +42,6 @@ shinyServer(function(input, output) {
     if (input$cat != "All") {
       data <- data[data$category == input$cat,]
     }
-    #if (input$Sess != "All") {
-    #  data <- data[data$Sessions == input$Sess,]
-    #}
     data$category <- NULL
     data
   }))

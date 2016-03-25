@@ -4,8 +4,6 @@ library(shiny)
 shinyUI(
   fluidPage(
     titlePanel("DataTable"),
-    
-    # Create a new Row in the UI for selectInputs
     fluidRow(
       column(4,
              selectInput("cat",
@@ -25,14 +23,6 @@ shinyUI(
                        value = Sys.Date()
              )
       )
-      
-      #,
-      #column(4,
-      #       selectInput("Sess",
-      #                   "Sessions:",
-      #                   c("All",
-      #                     unique(as.character(y$Sessions))))
-      #)
     ),
     # Create a new row for the table.
     fluidRow(
